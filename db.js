@@ -9,8 +9,10 @@ const pool=sql.createPool({
 
 
 const getCurser=async()=>{
-  const rusalt=await pool.query('SELECT * FROM mehran.curses;')
-  console.log(rusalt);
+  const [rusalt]=await pool.query('SELECT * FROM mehran.curses;')
+  return rusalt;
 }
 
-getCurser();
+getCurser().then((data)=>{
+  console.log(data);
+})
