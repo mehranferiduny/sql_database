@@ -1,9 +1,12 @@
 const express=require('express');
-const {pool}=require('./db')
+
 
 const app=express();
 
 app.use(express.json());
+
+
+app.use('/',require('./routers/home'))
 
 const PORT=process.env.PORT || 4000;
 
