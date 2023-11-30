@@ -8,7 +8,6 @@ const pool=sql.createPool({
   database: process.env.DATABASE,
 }).promise();
 
-
 const getCursers=async()=>{
   const [rusalt]=await pool.query('SELECT * FROM mehran.curses;')
   return rusalt;
