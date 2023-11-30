@@ -24,6 +24,11 @@ const insertCurser=async (Title)=>{
   return getCurser(rusalt.insertId);
 };
 
+const callStordeProcedure =async (id)=>{
+  const [result] = await pool.query('call mehran.sd_select (?)',[id]);
+  return result[0]
+}
+
 const updateCurser=async (id,Tilte)=>{
   const [rusalt]=await pool.query(`UPDATE mehran.curses SET Title=? WHERE id=?`,[Tilte,id]);
   return getCurser(id);
@@ -34,10 +39,9 @@ const deleteCurser=async (id)=>{
   return id;
 }
 
-getCursers().then((data)=>{
-  console.log(data);
-})
+// getCursers().then((data)=>console.log(data));
 // getCurser(2).then((data)=>console.log(data));
 // insertCurser('go').then((data)=>console.log(data));
 // updateCurser(8,'NodeJS').then((data)=>console.log(data));
 // deleteCurser(9).then((data)=>console.log(data));
+callStordeProcedure(6).then((data)=>console.log(data));
