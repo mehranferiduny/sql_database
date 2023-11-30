@@ -19,7 +19,7 @@ Change the config file .env
 HOST=localhost
 USER=root
 PASSWORD=password
-DATABASE=name database
+DATABASE=databasename
 ```
 
 next stared
